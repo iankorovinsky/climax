@@ -6,8 +6,12 @@ const Modal = ({ show, onClose, content }) => {
   return (
     <div className="modal-overlay">
       <div className="modal-content">
+        <div>
+        <buttom className="start-agent">Start Agent</buttom>
         <button className="close-button" onClick={onClose}>X</button>
-        <h2>Marker Information</h2>
+        </div>
+
+        <h2>Country Information</h2>
         <p>{content}</p>
       </div>
     </div>
