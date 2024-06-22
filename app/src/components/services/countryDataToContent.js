@@ -2,9 +2,7 @@ import React, { useCallback } from 'react';
 import ReactFlow, { useNodesState, useEdgesState, addEdge } from 'reactflow';
  
 import 'reactflow/dist/style.css';
-import ConnectionLine from '../flowchart/CustomLine';
-import { getElements } from '../flowchart/utils';
-import CustomAnimatedEdge from '../flowchart/CustomAnimatedEdge';
+
  
 const initialNodes = [
   { id: '1', position: { x: 0, y: 400 }, data: { label: 'Find Basic Info On Country' } },
