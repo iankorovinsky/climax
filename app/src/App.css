@@ -45,3 +45,35 @@
   height: 30px;
   border-radius: 50%;
 }
+
+/* src/Modal.css */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);  /* Semi-transparent background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: rgba(0, 0, 0, 0.7);  /* Transparent black background */
+  padding: 40px;  /* Increase padding */
+  border-radius: 10px;  /* Increase border radius */
+  max-width: 800px;  /* Increase max width */
+  width: 90%;  /* Use 90% of the available width */
+  color: white;  /* White text for better contrast */
+  text-align: left;
+}
+
+.close-button {
+  background: transparent;
+  border: none;
+  font-size: 1.5rem;
+  float: right;
+  cursor: pointer;
+  color: white;  /* White close button */
+}

@@ -1,15 +1,17 @@
 // src/Map.js
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import mapboxgl from 'mapbox-gl';
 import { countryMarkers } from '../constants/Country-Coords';
-
 import "mapbox-gl/dist/mapbox-gl.css";
+import Modal from './Modal';
 
 mapboxgl.accessToken = 'pk.eyJ1IjoiaWtvcm92aW5za3kiLCJhIjoiY2x4cWVwemN1MHNqazJpcHdwbTVvdmU3eSJ9.So197HzrXDhSQoUSbDUhUg';
 
 const Map = () => {
   const mapContainer = useRef(null);
   const map = useRef(null);
+  const [showModal, setShowModal] = useState(false);
+  const [modalContent, setModalContent] = useState('');
 
   useEffect(() => {
     if (map.current) return; // Initialize map only once
@@ -39,15 +41,24 @@ const Map = () => {
 
         new mapboxgl.Marker(el)
           .setLngLat(marker.coordinates)
-          .setPopup(new mapboxgl.Popup({ offset: 25 }).setText(marker.popupText))
           .addTo(map.current);
+
+        el.addEventListener('click', () => {
+            setModalContent(`Country: ${marker.country}`);
+            setShowModal(true);
+        });
       });
     });
   }, []);
 
+  const handleCloseModal = () => {
+    setShowModal(false);
+  };
+
   return (
     <div>
       <div ref={mapContainer} style={{ width: '100%', height: '100vh' }} />
+      <Modal show={showModal} onClose={handleCloseModal} content={modalContent} />
     </div>
   );
 };
