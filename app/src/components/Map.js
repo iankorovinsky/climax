@@ -39,7 +39,8 @@ const Map = () => {
 
         new mapboxgl.Marker(el)
           .setLngLat(marker.coordinates)
-          .setPopup(new mapboxgl.Popup({ offset: 25 }).setText(marker.popupText))
+          .setPopup(new mapboxgl.Popup({ offset: 25 }).setText(marker.country))
+          
           .addTo(map.current);
       });
     });
