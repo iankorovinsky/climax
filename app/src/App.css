@@ -36,3 +36,12 @@
     transform: rotate(360deg);
   }
 }
+
+/* Marker css style */
+.marker {
+  background-image: url('./images/marker-icon.png');
+  background-size: cover;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}

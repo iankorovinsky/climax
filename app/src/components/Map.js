@@ -1,7 +1,15 @@
+// src/Map.js
 import React, { useRef, useEffect } from 'react';
 import mapboxgl from 'mapbox-gl';
+import "mapbox-gl/dist/mapbox-gl.css";
 
 mapboxgl.accessToken = 'pk.eyJ1IjoiaWtvcm92aW5za3kiLCJhIjoiY2x4cWVwemN1MHNqazJpcHdwbTVvdmU3eSJ9.So197HzrXDhSQoUSbDUhUg';
+
+const markers = [
+  { coordinates: [0, 0], popupText: 'Marker at [0, 0]' },
+  { coordinates: [10, 10], popupText: 'Marker at [10, 10]' },
+  { coordinates: [-10, -10], popupText: 'Marker at [-10, -10]' }
+];
 
 const Map = () => {
   const mapContainer = useRef(null);
@@ -9,6 +17,7 @@ const Map = () => {
 
   useEffect(() => {
     if (map.current) return; // Initialize map only once
+
     map.current = new mapboxgl.Map({
       container: mapContainer.current,
       style: 'mapbox://styles/mapbox/dark-v10',
@@ -26,8 +35,19 @@ const Map = () => {
         'space-color': '#000000',
         'star-intensity': 0.15
       });
+
+      // Add markers to the map
+      markers.forEach(marker => {
+        const el = document.createElement('div');
+        el.className = 'marker';
+
+        new mapboxgl.Marker(el)
+          .setLngLat(marker.coordinates)
+          .setPopup(new mapboxgl.Popup({ offset: 25 }).setText(marker.popupText))
+          .addTo(map.current);
+      });
     });
-  });
+  }, []);
 
   return (
     <div>
