@@ -1,15 +1,11 @@
 // src/Map.js
 import React, { useRef, useEffect } from 'react';
 import mapboxgl from 'mapbox-gl';
+import { countryMarkers } from '../constants/Country-Coords';
+
 import "mapbox-gl/dist/mapbox-gl.css";
 
 mapboxgl.accessToken = 'pk.eyJ1IjoiaWtvcm92aW5za3kiLCJhIjoiY2x4cWVwemN1MHNqazJpcHdwbTVvdmU3eSJ9.So197HzrXDhSQoUSbDUhUg';
-
-const markers = [
-  { coordinates: [0, 0], popupText: 'Marker at [0, 0]' },
-  { coordinates: [10, 10], popupText: 'Marker at [10, 10]' },
-  { coordinates: [-10, -10], popupText: 'Marker at [-10, -10]' }
-];
 
 const Map = () => {
   const mapContainer = useRef(null);
@@ -37,7 +33,7 @@ const Map = () => {
       });
 
       // Add markers to the map
-      markers.forEach(marker => {
+      countryMarkers.forEach(marker => {
         const el = document.createElement('div');
         el.className = 'marker';
 
