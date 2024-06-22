@@ -2,6 +2,7 @@
 import React, { useRef, useEffect, useState } from 'react';
 import mapboxgl from 'mapbox-gl';
 import { countryMarkers } from '../constants/Country-Coords';
+import countryDataToContent from '../components/services/countryDataToContent'
 import "mapbox-gl/dist/mapbox-gl.css";
 import Modal from './Modal';
 
@@ -44,7 +45,7 @@ const Map = () => {
           .addTo(map.current);
 
         el.addEventListener('click', () => {
-            setModalContent(`Country: ${marker.country}`);
+            setModalContent(countryDataToContent(marker));
             setShowModal(true);
         });
       });
