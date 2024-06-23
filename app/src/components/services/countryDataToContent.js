@@ -45,7 +45,7 @@ const custom_node = {'custom_node': CustomNode};
         edges={edges}
         nodeTypes={custom_node}
         onNodesChange={onNodesChange}
-        fitView={true}
+     
 
         //defaultViewport={{ x: 600, y: 600, zoom: 0.2 }} // Change zoom level her
         
