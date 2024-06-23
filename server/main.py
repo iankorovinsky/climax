@@ -19,7 +19,7 @@ def current_policy():
     country_name = request.args.get('country')
     contexts = agent.knowledge_base_query(country_name)
     summary = agent.llm_summary(country_name, contexts)
-    return jsonify("current_policy": summary)
+    return jsonify({"current_policy":summary})
 
 # endpoint 2
 # display similar policies 
