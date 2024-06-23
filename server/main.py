@@ -4,14 +4,16 @@ from flask_cors import CORS
 from agent import Agent
 from dynamo import DynamoAccessor
 import model
+import optimal_emissions
 
 app = Flask(__name__)
 CORS(app)  # Enable CORS for all routes
 agent = Agent()
 global_summary = ""
-global_similar_countries = ""
+global_similar_countries = []
 global_similar_policies = ""
 db = DynamoAccessor()
+prediction = []
 
 @app.route('/')
 def home():
@@ -50,9 +52,24 @@ def similar_policy():
 
 # endpoint 3
 # display prediction of what needs to change
+@app.route('/api/calculate_prediction', methods=['GET'])
+def calculate_prediction():
+    country_name = request.args.get('country')
+    global global_similar_countries
+    global prediction
+    prediction = optimal_emissions.get_emissions_graph(country_name, 20, global_similar_countries)
+    return jsonify({"prediction":prediction})
 
 # endpoint 4
 # display new policy based off krish's prediction
+@app.route('/api/generate_recommendation', methods=['GET'])
+def generate_recommendation():
+    country_name = request.args.get('country')
+    global global_summary, prediction, global_similar_policies 
+    contexts = f"Improved Policies: {global_similar_policies}\nHow we want to improve our climate scores, the first score is our current score:{prediction}"
+    results = agent.llm_query(country_name, contexts, global_summary)
+    return jsonify({"results":results})
+
 
 
 if __name__ == '__main__':
