@@ -8,7 +8,7 @@ import pandas as pd
 from sklearn.neighbors import NearestNeighbors
 
 # Load the cleaned data
-data = pd.read_csv('scaled_cleaned_data.csv')
+data = pd.read_csv('../data/scaled_cleaned_data.csv')
 
 # selected key features for comparison
 features = ['Population', 'Mean income or consumption per day', 'poverty_gap_index_4000', 'Annual CO₂ emissions (per capita)', 'GDP per capita']
@@ -37,9 +37,10 @@ def find_similar_countries_for_similar_policies(query_country, query_year):
     distinct_countries = set()
 
     for country in similar_country['Country']:
-        distinct_countries.add(country)
-        if len(distinct_countries) == 3:
-            break
+        if country != query_country:
+            distinct_countries.add(country)
+            if len(distinct_countries) == 3:
+                break
 
     return list(distinct_countries)
 
@@ -69,7 +70,7 @@ def find_similar_countries_for_future_emissions(query_country, query_year):
     return list(distinct_countries)
 
 
-# testing
+#testing
 # query_country = 'Canada' 
 # query_year = 2019 # default query year
 # similar_country = find_similar_countries_for_similar_policies(query_country, query_year)

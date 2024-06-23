@@ -12,7 +12,7 @@ files = {
 # Read and standardize each file
 dataframes = {}
 for file, columns in files.items():
-    df = pd.read_csv(f'./data/{file}')
+    df = pd.read_csv(f'../data/{file}')
     df = df[columns]
     dataframes[file] = df
 
