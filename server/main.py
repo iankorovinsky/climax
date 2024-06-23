@@ -11,14 +11,15 @@ agent = Agent()
 def home():
     return jsonify(message="Welcome to the Flask App with CORS enabled!")
 
-@app.route('/api/run_pipeline', methods=['GET'])
-def run_pipeline():
-    
-    country_name = request.args.get('country')
-    return jsonify()
-
 # endpoint 1
 # display current policy summary
+@app.route('/api/current_policy', methods=['GET'])
+def current_policy():
+    global agent
+    country_name = request.args.get('country')
+    contexts = agent.knowledge_base_query(country_name)
+    summary = agent.llm_summary(country_name, contexts)
+    return jsonify("current_policy": summary)
 
 # endpoint 2
 # display similar policies 

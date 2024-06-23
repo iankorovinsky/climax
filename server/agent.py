@@ -39,7 +39,7 @@ class Agent:
             contexts.append(retrievedResult['content']['text'])
         return contexts
     
-    # INITIAL POLICIES
+    # FOR
     def llm_summary(self, country, summary):
         prompt = f"""
         Human: You are an AI summarizer. Use the following pieces of information to provide a concise summary on the climate policies of {country}. If you don't know the answer, make up an answer.
