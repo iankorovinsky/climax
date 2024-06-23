@@ -2,8 +2,7 @@
 import React from 'react';
 import Draggable from 'react-draggable';
 
-const MiniModal = ({ content, position, onClose }) => {
-  const formattedContent = JSON.stringify(JSON.parse(content), null, 2);
+const MiniModal = ({ header,content, position, onClose }) => {
 
   return (
     <Draggable>
@@ -12,8 +11,9 @@ const MiniModal = ({ content, position, onClose }) => {
           <div>
             <button className="close-button" onClick={onClose}>🌎</button>
           </div>
-          <h2>Country Information</h2>
-          <pre><code>{formattedContent}</code></pre>
+        
+          <h2>{header}</h2>
+          <p>{content}</p>
         </div>
       </div>
     </Draggable>

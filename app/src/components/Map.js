@@ -94,7 +94,18 @@ const Map = () => {
       `http://34.226.142.145/api/calculate_prediction?country=${encodeURIComponent(country)}`,
       `http://34.226.142.145/api/generate_recommendation?country=${encodeURIComponent(country)}`,
     ];
-
+    const headers = [
+      'Current Policy',
+      'Similar Policy',
+      'Calculate Prediction', 
+      'Generate Recommendation'
+    ]
+    const keys = [
+      'current_policy',
+      'similar_policy',
+      'prediction',
+      'results'
+    ]
     const positions = [
       { top: '5%', left: '5%' },
       { top: '5%', left: '55%' },
@@ -115,17 +126,21 @@ const Map = () => {
         }
 
         const data = await response.json();
-        const dataString = JSON.stringify(data);
-
+        //console.log(data['current_policy'])
+        let dataString = JSON.stringify(data);
+        console.log(dataString)
+        if (i != 2) {
+          dataString = data[keys[i]]
+        }
         setMiniModals((prevModals) => [
           ...prevModals,
-          { content: dataString, position: positions[i] }
+          {  content: dataString, position: positions[i], header: headers[i] }
         ]);
       } catch (error) {
         console.error('There was a problem with the fetch operation:', error);
         setMiniModals((prevModals) => [
           ...prevModals,
-          { content: 'Error fetching data', position: positions[i] }
+          {  content: 'Error fetching data', position: positions[i] }
         ]);
       }
     }
@@ -147,6 +162,7 @@ const Map = () => {
       />
       {miniModals.map((modal, index) => (
         <MiniModal
+          header={modal.header}
           key={index}
           content={modal.content}
           position={modal.position}
