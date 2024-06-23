@@ -1,4 +1,35 @@
-
+Entity,Code,Year,"GDP, PPP (constant 2017 international $)"
+Afghanistan,AFG,2002,26890054000
+Afghanistan,AFG,2003,29265058000
+Afghanistan,AFG,2004,29678901000
+Afghanistan,AFG,2005,33011757000
+Afghanistan,AFG,2006,34780330000
+Afghanistan,AFG,2007,39589170000
+Afghanistan,AFG,2008,41143038000
+Afghanistan,AFG,2009,49943753000
+Afghanistan,AFG,2010,57116893000
+Afghanistan,AFG,2011,57360413000
+Afghanistan,AFG,2012,64675180000
+Afghanistan,AFG,2013,68297470000
+Afghanistan,AFG,2014,70158260000
+Afghanistan,AFG,2015,71176480000
+Afghanistan,AFG,2016,72785300000
+Afghanistan,AFG,2017,74711925000
+Afghanistan,AFG,2018,75600420000
+Afghanistan,AFG,2019,78557610000
+Afghanistan,AFG,2020,76710640000
+Afghanistan,AFG,2021,60801740000
+Albania,ALB,1990,15864307000
+Albania,ALB,1991,11421961000
+Albania,ALB,1992,10601052000
+Albania,ALB,1993,11614451000
+Albania,ALB,1994,12578782000
+Albania,ALB,1995,14254569000
+Albania,ALB,1996,15551736000
+Albania,ALB,1997,13853488000
+Albania,ALB,1998,15076671000
+Albania,ALB,1999,17020176000
+Albania,ALB,2000,18202434000
 Albania,ALB,2001,19712018000
 Albania,ALB,2002,20606260000
 Albania,ALB,2003,21745504000
@@ -1609,6 +1640,39 @@ Dominican Republic,DOM,2019,197735330000
 Dominican Republic,DOM,2020,184447060000
 Dominican Republic,DOM,2021,207082370000
 Dominican Republic,DOM,2022,217143120000
+East Asia and Pacific (WB),,1990,9381973000000
+East Asia and Pacific (WB),,1991,9892587000000
+East Asia and Pacific (WB),,1992,10403836000000
+East Asia and Pacific (WB),,1993,10935925000000
+East Asia and Pacific (WB),,1994,11596368000000
+East Asia and Pacific (WB),,1995,12334049000000
+East Asia and Pacific (WB),,1996,13096703000000
+East Asia and Pacific (WB),,1997,13674077000000
+East Asia and Pacific (WB),,1998,13644959000000
+East Asia and Pacific (WB),,1999,14198395000000
+East Asia and Pacific (WB),,2000,15014224000000
+East Asia and Pacific (WB),,2001,15563625000000
+East Asia and Pacific (WB),,2002,16328425000000
+East Asia and Pacific (WB),,2003,17223931000000
+East Asia and Pacific (WB),,2004,18317380000000
+East Asia and Pacific (WB),,2005,19491994000000
+East Asia and Pacific (WB),,2006,20863422000000
+East Asia and Pacific (WB),,2007,22547660000000
+East Asia and Pacific (WB),,2008,23659454000000
+East Asia and Pacific (WB),,2009,24428930000000
+East Asia and Pacific (WB),,2010,26391729000000
+East Asia and Pacific (WB),,2011,27949676000000
+East Asia and Pacific (WB),,2012,29509779000000
+East Asia and Pacific (WB),,2013,31143393000000
+East Asia and Pacific (WB),,2014,32736497000000
+East Asia and Pacific (WB),,2015,34377954000000
+East Asia and Pacific (WB),,2016,36087670000000
+East Asia and Pacific (WB),,2017,38020630000000
+East Asia and Pacific (WB),,2018,39956467000000
+East Asia and Pacific (WB),,2019,41686530000000
+East Asia and Pacific (WB),,2020,41608040000000
+East Asia and Pacific (WB),,2021,44192840000000
+East Asia and Pacific (WB),,2022,45590214000000
 East Timor,TLS,2000,2037488600
 East Timor,TLS,2001,2370646000
 East Timor,TLS,2002,2211726300
@@ -1858,6 +1922,72 @@ Ethiopia,ETH,2019,248972210000
 Ethiopia,ETH,2020,264058750000
 Ethiopia,ETH,2021,278955720000
 Ethiopia,ETH,2022,293788060000
+Europe and Central Asia (WB),,1990,19809130000000
+Europe and Central Asia (WB),,1991,19670816000000
+Europe and Central Asia (WB),,1992,19231582000000
+Europe and Central Asia (WB),,1993,18897151000000
+Europe and Central Asia (WB),,1994,18779675000000
+Europe and Central Asia (WB),,1995,19081732000000
+Europe and Central Asia (WB),,1996,19366630000000
+Europe and Central Asia (WB),,1997,19926706000000
+Europe and Central Asia (WB),,1998,20348311000000
+Europe and Central Asia (WB),,1999,20921096000000
+Europe and Central Asia (WB),,2000,21914083000000
+Europe and Central Asia (WB),,2001,22450730000000
+Europe and Central Asia (WB),,2002,22914806000000
+Europe and Central Asia (WB),,2003,23475528000000
+Europe and Central Asia (WB),,2004,24389618000000
+Europe and Central Asia (WB),,2005,25174479000000
+Europe and Central Asia (WB),,2006,26311540000000
+Europe and Central Asia (WB),,2007,27444930000000
+Europe and Central Asia (WB),,2008,27878085000000
+Europe and Central Asia (WB),,2009,26554800000000
+Europe and Central Asia (WB),,2010,27322598000000
+Europe and Central Asia (WB),,2011,28095233000000
+Europe and Central Asia (WB),,2012,28292843000000
+Europe and Central Asia (WB),,2013,28610312000000
+Europe and Central Asia (WB),,2014,29119130000000
+Europe and Central Asia (WB),,2015,29639748000000
+Europe and Central Asia (WB),,2016,30192622000000
+Europe and Central Asia (WB),,2017,31133958000000
+Europe and Central Asia (WB),,2018,31884883000000
+Europe and Central Asia (WB),,2019,32515629000000
+Europe and Central Asia (WB),,2020,30925258000000
+Europe and Central Asia (WB),,2021,32955960000000
+Europe and Central Asia (WB),,2022,33788348000000
+European Union (27),,1990,11993599000000
+European Union (27),,1991,12162340000000
+European Union (27),,1992,12282645000000
+European Union (27),,1993,12220523000000
+European Union (27),,1994,12546818000000
+European Union (27),,1995,12897547000000
+European Union (27),,1996,13158124000000
+European Union (27),,1997,13495734000000
+European Union (27),,1998,13896647000000
+European Union (27),,1999,14293278000000
+European Union (27),,2000,14851320000000
+European Union (27),,2001,15187627000000
+European Union (27),,2002,15379314000000
+European Union (27),,2003,15547313000000
+European Union (27),,2004,15978067000000
+European Union (27),,2005,16310545000000
+European Union (27),,2006,16907949000000
+European Union (27),,2007,17471707000000
+European Union (27),,2008,17624730000000
+European Union (27),,2009,16870995000000
+European Union (27),,2010,17216473000000
+European Union (27),,2011,17540647000000
+European Union (27),,2012,17417425000000
+European Union (27),,2013,17399479000000
+European Union (27),,2014,17692306000000
+European Union (27),,2015,18115470000000
+European Union (27),,2016,18482538000000
+European Union (27),,2017,19037984000000
+European Union (27),,2018,19469733000000
+European Union (27),,2019,19850100000000
+European Union (27),,2020,18724411000000
+European Union (27),,2021,19859450000000
+European Union (27),,2022,20568940000000
 Fiji,FJI,1990,6157498000
 Fiji,FJI,1991,5991245300
 Fiji,FJI,1992,6356711400
@@ -2353,6 +2483,39 @@ Haiti,HTI,2019,34734588000
 Haiti,HTI,2020,33586432000
 Haiti,HTI,2021,32982469000
 Haiti,HTI,2022,32427708000
+High-income countries,,1990,32660475000000
+High-income countries,,1991,33163303000000
+High-income countries,,1992,33876842000000
+High-income countries,,1993,34327436000000
+High-income countries,,1994,35463348000000
+High-income countries,,1995,36508464000000
+High-income countries,,1996,37628690000000
+High-income countries,,1997,38930024000000
+High-income countries,,1998,40008015000000
+High-income countries,,1999,41344910000000
+High-income countries,,2000,43083035000000
+High-income countries,,2001,43744426000000
+High-income countries,,2002,44432213000000
+High-income countries,,2003,45460073000000
+High-income countries,,2004,47080480000000
+High-income countries,,2005,48472787000000
+High-income countries,,2006,50054526000000
+High-income countries,,2007,51491373000000
+High-income countries,,2008,51869890000000
+High-income countries,,2009,50172820000000
+High-income countries,,2010,51721450000000
+High-income countries,,2011,52837103000000
+High-income countries,,2012,53556870000000
+High-income countries,,2013,54345542000000
+High-income countries,,2014,55511900000000
+High-income countries,,2015,56853240000000
+High-income countries,,2016,57924496000000
+High-income countries,,2017,59337860000000
+High-income countries,,2018,60755700000000
+High-income countries,,2019,61829090000000
+High-income countries,,2020,59188640000000
+High-income countries,,2021,62532857000000
+High-income countries,,2022,64388015000000
 Honduras,HND,1990,19771800000
 Honduras,HND,1991,19115512000
 Honduras,HND,1992,20276530000
@@ -3015,6 +3178,39 @@ Laos,LAO,2019,56543010000
 Laos,LAO,2020,56827440000
 Laos,LAO,2021,58264236000
 Laos,LAO,2022,59841700000
+Latin America and Caribbean (WB),,1990,4761288400000
+Latin America and Caribbean (WB),,1991,4917902700000
+Latin America and Caribbean (WB),,1992,5060584000000
+Latin America and Caribbean (WB),,1993,5295337000000
+Latin America and Caribbean (WB),,1994,5572696500000
+Latin America and Caribbean (WB),,1995,5608800000000
+Latin America and Caribbean (WB),,1996,5832350600000
+Latin America and Caribbean (WB),,1997,6151490500000
+Latin America and Caribbean (WB),,1998,6341885700000
+Latin America and Caribbean (WB),,1999,6379654300000
+Latin America and Caribbean (WB),,2000,6610459600000
+Latin America and Caribbean (WB),,2001,6635098500000
+Latin America and Caribbean (WB),,2002,6667895300000
+Latin America and Caribbean (WB),,2003,6831226000000
+Latin America and Caribbean (WB),,2004,7195459600000
+Latin America and Caribbean (WB),,2005,7473271400000
+Latin America and Caribbean (WB),,2006,7856786500000
+Latin America and Caribbean (WB),,2007,8259689000000
+Latin America and Caribbean (WB),,2008,8557664700000
+Latin America and Caribbean (WB),,2009,8353090000000
+Latin America and Caribbean (WB),,2010,8888444000000
+Latin America and Caribbean (WB),,2011,9289101000000
+Latin America and Caribbean (WB),,2012,9539836000000
+Latin America and Caribbean (WB),,2013,9805290000000
+Latin America and Caribbean (WB),,2014,9953532000000
+Latin America and Caribbean (WB),,2015,10011236000000
+Latin America and Caribbean (WB),,2016,9998419000000
+Latin America and Caribbean (WB),,2017,10188337000000
+Latin America and Caribbean (WB),,2018,10360478000000
+Latin America and Caribbean (WB),,2019,10439630000000
+Latin America and Caribbean (WB),,2020,9742551000000
+Latin America and Caribbean (WB),,2021,10451478000000
+Latin America and Caribbean (WB),,2022,10868352000000
 Latvia,LVA,1995,23854416000
 Latvia,LVA,1996,24471771000
 Latvia,LVA,1997,26634320000
@@ -3183,6 +3379,72 @@ Lithuania,LTU,2019,103938750000
 Lithuania,LTU,2020,103913170000
 Lithuania,LTU,2021,110443810000
 Lithuania,LTU,2022,113138835000
+Low-income countries,,1990,388860770000
+Low-income countries,,1991,390340870000
+Low-income countries,,1992,383424860000
+Low-income countries,,1993,386250500000
+Low-income countries,,1994,385884320000
+Low-income countries,,1995,404593150000
+Low-income countries,,1996,427239930000
+Low-income countries,,1997,459021000000
+Low-income countries,,1998,472199860000
+Low-income countries,,1999,487546850000
+Low-income countries,,2000,502364960000
+Low-income countries,,2001,531166920000
+Low-income countries,,2002,552837450000
+Low-income countries,,2003,581396400000
+Low-income countries,,2004,618751070000
+Low-income countries,,2005,661536500000
+Low-income countries,,2006,706537260000
+Low-income countries,,2007,755922960000
+Low-income countries,,2008,801841200000
+Low-income countries,,2009,830791940000
+Low-income countries,,2010,889894140000
+Low-income countries,,2011,920843100000
+Low-income countries,,2012,926179850000
+Low-income countries,,2013,975889700000
+Low-income countries,,2014,1036899450000
+Low-income countries,,2015,1086712600000
+Low-income countries,,2016,1137694500000
+Low-income countries,,2017,1186859200000
+Low-income countries,,2018,1230510800000
+Low-income countries,,2019,1283943300000
+Low-income countries,,2020,1292508300000
+Low-income countries,,2021,1316971900000
+Low-income countries,,2022,1371653000000
+Lower-middle-income countries,,1990,5810899000000
+Lower-middle-income countries,,1991,5884266000000
+Lower-middle-income countries,,1992,5999598500000
+Lower-middle-income countries,,1993,6005336300000
+Lower-middle-income countries,,1994,6054012000000
+Lower-middle-income countries,,1995,6282540500000
+Lower-middle-income countries,,1996,6613416000000
+Lower-middle-income countries,,1997,6829343500000
+Lower-middle-income countries,,1998,7112617400000
+Lower-middle-income countries,,1999,7474147000000
+Lower-middle-income countries,,2000,7811867000000
+Lower-middle-income countries,,2001,8156214000000
+Lower-middle-income countries,,2002,8543909400000
+Lower-middle-income countries,,2003,9106422000000
+Lower-middle-income countries,,2004,9742392000000
+Lower-middle-income countries,,2005,10354315000000
+Lower-middle-income countries,,2006,11057703000000
+Lower-middle-income countries,,2007,11836920000000
+Lower-middle-income countries,,2008,12298354000000
+Lower-middle-income countries,,2009,12835104000000
+Lower-middle-income countries,,2010,13680851000000
+Lower-middle-income countries,,2011,14309149000000
+Lower-middle-income countries,,2012,14908839000000
+Lower-middle-income countries,,2013,15632508000000
+Lower-middle-income countries,,2014,16484047000000
+Lower-middle-income countries,,2015,17322607000000
+Lower-middle-income countries,,2016,18383936000000
+Lower-middle-income countries,,2017,19361922000000
+Lower-middle-income countries,,2018,20336228000000
+Lower-middle-income countries,,2019,21073230000000
+Lower-middle-income countries,,2020,20389960000000
+Lower-middle-income countries,,2021,21676415000000
+Lower-middle-income countries,,2022,22769977000000
 Luxembourg,LUX,1990,27058205000
 Luxembourg,LUX,1991,29397166000
 Luxembourg,LUX,1992,29932091000
@@ -3607,6 +3869,72 @@ Micronesia (country),FSM,2019,394375650
 Micronesia (country),FSM,2020,383460380
 Micronesia (country),FSM,2021,375698020
 Micronesia (country),FSM,2022,372593100
+Middle East and North Africa (WB),,1990,2771177000000
+Middle East and North Africa (WB),,1991,2901439000000
+Middle East and North Africa (WB),,1992,3029018000000
+Middle East and North Africa (WB),,1993,3078028500000
+Middle East and North Africa (WB),,1994,3139287400000
+Middle East and North Africa (WB),,1995,3218890300000
+Middle East and North Africa (WB),,1996,3380245200000
+Middle East and North Africa (WB),,1997,3493322600000
+Middle East and North Africa (WB),,1998,3651993300000
+Middle East and North Africa (WB),,1999,3726163800000
+Middle East and North Africa (WB),,2000,3967580600000
+Middle East and North Africa (WB),,2001,4033220000000
+Middle East and North Africa (WB),,2002,4104958200000
+Middle East and North Africa (WB),,2003,4328225200000
+Middle East and North Africa (WB),,2004,4655151600000
+Middle East and North Africa (WB),,2005,4884165000000
+Middle East and North Africa (WB),,2006,5156612000000
+Middle East and North Africa (WB),,2007,5428741700000
+Middle East and North Africa (WB),,2008,5672558700000
+Middle East and North Africa (WB),,2009,5713374500000
+Middle East and North Africa (WB),,2010,5992474000000
+Middle East and North Africa (WB),,2011,6207139500000
+Middle East and North Africa (WB),,2012,6469819300000
+Middle East and North Africa (WB),,2013,6600481300000
+Middle East and North Africa (WB),,2014,6795070000000
+Middle East and North Africa (WB),,2015,7011985000000
+Middle East and North Africa (WB),,2016,7341752000000
+Middle East and North Africa (WB),,2017,7489043000000
+Middle East and North Africa (WB),,2018,7648408000000
+Middle East and North Africa (WB),,2019,7728293500000
+Middle East and North Africa (WB),,2020,7479162000000
+Middle East and North Africa (WB),,2021,7811331000000
+Middle East and North Africa (WB),,2022,8273665000000
+Middle-income countries,,1990,18231845000000
+Middle-income countries,,1991,18397811000000
+Middle-income countries,,1992,18517640000000
+Middle-income countries,,1993,18947410000000
+Middle-income countries,,1994,19329186000000
+Middle-income countries,,1995,19991726000000
+Middle-income countries,,1996,20994654000000
+Middle-income countries,,1997,21979854000000
+Middle-income countries,,1998,22432465000000
+Middle-income countries,,1999,23296945000000
+Middle-income countries,,2000,24639525000000
+Middle-income countries,,2001,25536670000000
+Middle-income countries,,2002,26703366000000
+Middle-income countries,,2003,28292870000000
+Middle-income countries,,2004,30404795000000
+Middle-income countries,,2005,32509006000000
+Middle-income countries,,2006,35050016000000
+Middle-income countries,,2007,37952474000000
+Middle-income countries,,2008,39976430000000
+Middle-income countries,,2009,40964085000000
+Middle-income countries,,2010,44020336000000
+Middle-income countries,,2011,46598483000000
+Middle-income countries,,2012,49056190000000
+Middle-income countries,,2013,51548610000000
+Middle-income countries,,2014,53953635000000
+Middle-income countries,,2015,56252617000000
+Middle-income countries,,2016,58834250000000
+Middle-income countries,,2017,61818534000000
+Middle-income countries,,2018,64786713000000
+Middle-income countries,,2019,67242465000000
+Middle-income countries,,2020,66022980000000
+Middle-income countries,,2021,70657020000000
+Middle-income countries,,2022,73275456000000
 Moldova,MDA,1995,16590806000
 Moldova,MDA,1996,15615754000
 Moldova,MDA,1997,15872956000
@@ -4043,6 +4371,39 @@ Nigeria,NGA,2019,1032048500000
 Nigeria,NGA,2020,1013530900000
 Nigeria,NGA,2021,1050496300000
 Nigeria,NGA,2022,1084655100000
+North America (WB),,1990,11058118000000
+North America (WB),,1991,11027044000000
+North America (WB),,1992,11390680000000
+North America (WB),,1993,11703247000000
+North America (WB),,1994,12179126000000
+North America (WB),,1995,12506089000000
+North America (WB),,1996,12956155000000
+North America (WB),,1997,13530576000000
+North America (WB),,1998,14130414000000
+North America (WB),,1999,14811806000000
+North America (WB),,2000,15428749000000
+North America (WB),,2001,15587986000000
+North America (WB),,2002,15869003000000
+North America (WB),,2003,16299602000000
+North America (WB),,2004,16917174000000
+North America (WB),,2005,17502524000000
+North America (WB),,2006,17987660000000
+North America (WB),,2007,18349969000000
+North America (WB),,2008,18385442000000
+North America (WB),,2009,17902447000000
+North America (WB),,2010,18392742000000
+North America (WB),,2011,18701720000000
+North America (WB),,2012,19119567000000
+North America (WB),,2013,19479360000000
+North America (WB),,2014,19934285000000
+North America (WB),,2015,20439030000000
+North America (WB),,2016,20769059000000
+North America (WB),,2017,21248325000000
+North America (WB),,2018,21870420000000
+North America (WB),,2019,22365117000000
+North America (WB),,2020,21703906000000
+North America (WB),,2021,22982605000000
+North America (WB),,2022,23462343000000
 North Macedonia,MKD,1990,22713401000
 North Macedonia,MKD,1991,21311810000
 North Macedonia,MKD,1992,19912649000
@@ -5133,6 +5494,39 @@ South Africa,ZAF,2019,804557700000
 South Africa,ZAF,2020,756579040000
 South Africa,ZAF,2021,792161400000
 South Africa,ZAF,2022,807294900000
+South Asia (WB),,1990,2237650000000
+South Asia (WB),,1991,2284056700000
+South Asia (WB),,1992,2416187000000
+South Asia (WB),,1993,2520233800000
+South Asia (WB),,1994,2669928000000
+South Asia (WB),,1995,2852341200000
+South Asia (WB),,1996,3044363200000
+South Asia (WB),,1997,3157458000000
+South Asia (WB),,1998,3330311200000
+South Asia (WB),,1999,3581943700000
+South Asia (WB),,2000,3729146000000
+South Asia (WB),,2001,3896031300000
+South Asia (WB),,2002,4036405800000
+South Asia (WB),,2003,4326415700000
+South Asia (WB),,2004,4652762000000
+South Asia (WB),,2005,5007812300000
+South Asia (WB),,2006,5389261000000
+South Asia (WB),,2007,5775585400000
+South Asia (WB),,2008,5966509000000
+South Asia (WB),,2009,6384543300000
+South Asia (WB),,2010,6858006000000
+South Asia (WB),,2011,7206129400000
+South Asia (WB),,2012,7595211400000
+South Asia (WB),,2013,8052879000000
+South Asia (WB),,2014,8605722000000
+South Asia (WB),,2015,9232152000000
+South Asia (WB),,2016,9950767000000
+South Asia (WB),,2017,10599387000000
+South Asia (WB),,2018,11272112000000
+South Asia (WB),,2019,11718007000000
+South Asia (WB),,2020,11178118000000
+South Asia (WB),,2021,12099590000000
+South Asia (WB),,2022,12897572000000
 South Korea,KOR,1990,542570600000
 South Korea,KOR,1991,601049200000
 South Korea,KOR,1992,638306100000
@@ -5232,6 +5626,39 @@ Sri Lanka,LKA,2019,297371600000
 Sri Lanka,LKA,2020,283619600000
 Sri Lanka,LKA,2021,293580960000
 Sri Lanka,LKA,2022,270611250000
+Sub-Saharan Africa (WB),,1990,1518002800000
+Sub-Saharan Africa (WB),,1991,1525531800000
+Sub-Saharan Africa (WB),,1992,1521818800000
+Sub-Saharan Africa (WB),,1993,1511164300000
+Sub-Saharan Africa (WB),,1994,1526942800000
+Sub-Saharan Africa (WB),,1995,1581555400000
+Sub-Saharan Africa (WB),,1996,1663285900000
+Sub-Saharan Africa (WB),,1997,1735265500000
+Sub-Saharan Africa (WB),,1998,1778944000000
+Sub-Saharan Africa (WB),,1999,1820522800000
+Sub-Saharan Africa (WB),,2000,1884092600000
+Sub-Saharan Africa (WB),,2001,1964719300000
+Sub-Saharan Africa (WB),,2002,2083620000000
+Sub-Saharan Africa (WB),,2003,2170614000000
+Sub-Saharan Africa (WB),,2004,2313700500000
+Sub-Saharan Africa (WB),,2005,2454868700000
+Sub-Saharan Africa (WB),,2006,2606427000000
+Sub-Saharan Africa (WB),,2007,2768620700000
+Sub-Saharan Africa (WB),,2008,2914083700000
+Sub-Saharan Africa (WB),,2009,2997506800000
+Sub-Saharan Africa (WB),,2010,3173823300000
+Sub-Saharan Africa (WB),,2011,3313685500000
+Sub-Saharan Africa (WB),,2012,3432065300000
+Sub-Saharan Africa (WB),,2013,3603762200000
+Sub-Saharan Africa (WB),,2014,3780819600000
+Sub-Saharan Africa (WB),,2015,3896424800000
+Sub-Saharan Africa (WB),,2016,3961271000000
+Sub-Saharan Africa (WB),,2017,4068701400000
+Sub-Saharan Africa (WB),,2018,4185028300000
+Sub-Saharan Africa (WB),,2019,4299982000000
+Sub-Saharan Africa (WB),,2020,4220368700000
+Sub-Saharan Africa (WB),,2021,4401244000000
+Sub-Saharan Africa (WB),,2022,4562767300000
 Sudan,SDN,1990,71233430000
 Sudan,SDN,1991,76583710000
 Sudan,SDN,1992,81621280000
@@ -5870,6 +6297,39 @@ United States,USA,2019,20511078000000
 United States,USA,2020,19943372000000
 United States,USA,2021,21129102000000
 United States,USA,2022,21538084000000
+Upper-middle-income countries,,1990,12413204000000
+Upper-middle-income countries,,1991,12505380000000
+Upper-middle-income countries,,1992,12508502000000
+Upper-middle-income countries,,1993,12934603000000
+Upper-middle-income countries,,1994,13269011000000
+Upper-middle-income countries,,1995,13702415000000
+Upper-middle-income countries,,1996,14373923000000
+Upper-middle-income countries,,1997,15144080000000
+Upper-middle-income countries,,1998,15311505000000
+Upper-middle-income countries,,1999,15813042000000
+Upper-middle-income countries,,2000,16817693000000
+Upper-middle-income countries,,2001,17369886000000
+Upper-middle-income countries,,2002,18148342000000
+Upper-middle-income countries,,2003,19174452000000
+Upper-middle-income countries,,2004,20649690000000
+Upper-middle-income countries,,2005,22141355000000
+Upper-middle-income countries,,2006,23978368000000
+Upper-middle-income countries,,2007,26101011000000
+Upper-middle-income countries,,2008,27663454000000
+Upper-middle-income countries,,2009,28113147000000
+Upper-middle-income countries,,2010,30322880000000
+Upper-middle-income countries,,2011,32272382000000
+Upper-middle-income countries,,2012,34130073000000
+Upper-middle-income countries,,2013,35898066000000
+Upper-middle-income countries,,2014,37450240000000
+Upper-middle-income countries,,2015,38909312000000
+Upper-middle-income countries,,2016,40427634000000
+Upper-middle-income countries,,2017,42432603000000
+Upper-middle-income countries,,2018,44425154000000
+Upper-middle-income countries,,2019,46143073000000
+Upper-middle-income countries,,2020,45608493000000
+Upper-middle-income countries,,2021,48954922000000
+Upper-middle-income countries,,2022,50478814000000
 Uruguay,URY,1990,34638533000
 Uruguay,URY,1991,35864320000
 Uruguay,URY,1992,38708933000
