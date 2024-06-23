@@ -1,24 +1,31 @@
-# pre process data to remove continents from economy and emissions csv (specify in directory)
-import pandas as pd
 import os
 
-def remove_rows_with_double_commas(input_file):
-    # Read the file line by line and filter out lines containing `,,`
-    with open(input_file, 'r') as file:
-        lines = file.readlines()
+# List of continents to be removed
+continents = [
+    'Africa', 'Antarctica', 'Asia', 'Europe', 'North America', 'Oceania', 'South America'
+]
+
+def contains_continent(line, continents):
+    """Check if a line contains any continent name."""
+    return any(continent in line for continent in continents)
+
+def remove_continent_rows(input_file):
+    """Remove rows that contain any continent name and save the cleaned data to the same file."""
+    with open(input_file, 'r', encoding='utf-8') as infile:
+        lines = infile.readlines()
     
-    cleaned_lines = [line for line in lines if ',,' not in line]
+    cleaned_lines = [line for line in lines if not contains_continent(line, continents)]
     
-    # Write the cleaned lines back to the file
-    with open(input_file, 'w') as file:
-        file.writelines(cleaned_lines)
+    with open(input_file, 'w', encoding='utf-8') as outfile:
+        outfile.writelines(cleaned_lines)
     
     print(f"Processed {input_file}")
 
 # Directory containing the CSV files
-directory = 'economy'
+directory = 'data'
 
+# Process each CSV file in the directory
 for filename in os.listdir(directory):
     if filename.endswith('.csv'):
         filepath = os.path.join(directory, filename)
-        remove_rows_with_double_commas(filepath)
+        remove_continent_rows(filepath)
