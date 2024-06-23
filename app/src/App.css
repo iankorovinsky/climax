@@ -159,3 +159,57 @@
   cursor: pointer;
   color: white;  /* White close button */
 }
+/* src/MiniModal.css */
+.mini-modal-overlay {
+  position: fixed;
+  background: rgba(88, 84, 84, 0.7);  /* Transparent black background */
+  padding: 20px;
+  border-radius: 10px;
+  width: 30%;  /* Smaller width */
+  height: 30%;  /* Smaller height */
+  color: white;  /* White text for better contrast */
+  text-align: left;
+  overflow: hidden;  /* To contain the grid background */
+  z-index: 1000;  /* Ensure it appears above other elements */
+}
+
+.mini-modal-content {
+  position: relative;  /* For the grid background */
+  width: 100%;
+  height: 100%;
+  overflow: auto;  /* Enable scrolling if content overflows */
+}
+
+.mini-modal-content::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.2) 1px, transparent 1px);
+  background-size: 20px 20px;  /* Adjust the size of the grid dots */
+  pointer-events: none;  /* Make sure the background is not interactive */
+}
+
+.content-wrapper {
+  padding: 10px;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+  overflow-y: auto;  /* Enable vertical scrolling */
+  max-height: 80%;  /* Limit the height of the content area */
+}
+
+p {
+  margin: 10px 0;
+  line-height: 1.6;
+}
+
+.close-button {
+  background: transparent;
+  border: none;
+  font-size: 1.5rem;
+  float: right;
+  cursor: pointer;
+  color: white;  /* White close button */
+}
