@@ -1,3 +1,4 @@
+# Initial pre processing of data, clean out the continents
 import os
 
 # List of continents to be removed
@@ -6,11 +7,9 @@ continents = [
 ]
 
 def contains_continent(line, continents):
-    """Check if a line contains any continent name."""
     return any(continent in line for continent in continents)
 
 def remove_continent_rows(input_file):
-    """Remove rows that contain any continent name and save the cleaned data to the same file."""
     with open(input_file, 'r', encoding='utf-8') as infile:
         lines = infile.readlines()
     
@@ -18,8 +17,6 @@ def remove_continent_rows(input_file):
     
     with open(input_file, 'w', encoding='utf-8') as outfile:
         outfile.writelines(cleaned_lines)
-    
-    print(f"Processed {input_file}")
 
 # Directory containing the CSV files
 directory = 'data'
