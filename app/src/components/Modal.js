@@ -8,7 +8,7 @@ const Modal = ({ show, onClose, content, country }) => {
   async function callCurrentPolicySummary() {
     console.log(country);
     try {
-      const response = await fetch(`/api/current_policy?country=${encodeURIComponent(country)}`);
+      const response = await fetch(`http://127.0.0.1:5000/api/current_policy?country=${encodeURIComponent(country)}`);
       if (!response.ok) {
         throw new Error('Network response was not ok');
       }

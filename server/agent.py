@@ -80,17 +80,17 @@ class Agent:
         return response_text
 
     # FINAL OUTPUT
-    def llm_query(self, contexts, policies):
+    def llm_query(self, country, contexts, policies):
         prompt = f"""
         Human: You are an AI assistant providing advice on how to improve climate policy, and provide answers to questions by using fact based and statistical information when possible. 
         Use the following pieces of information to provide a concise answer to the question enclosed in <question> tags. 
         If you don't know the answer, make up an answer.
-        <context>
+        
+        Current Context:
         {contexts}
-        </context>
 
         <question>
-        How can we improve the current climate policies? Give specific examples. Provided are the current climate policies:
+        How can we improve the current climate policies for {country}? Give specific examples. Provided are the current climate policies:
 
         {policies}
         </question>
@@ -100,7 +100,7 @@ class Agent:
         Assistant:"""
 
         # payload with model paramters
-        messages=[{ "role":'user', "content":[{'type':'text','text': prompt.format(contexts, policies)}]}]
+        messages=[{ "role":'user', "content":[{'type':'text','text': prompt.format(contexts, country, policies)}]}]
         sonnet_payload = json.dumps({
             "anthropic_version": "bedrock-2023-05-31",
             "max_tokens": 512,
