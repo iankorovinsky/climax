@@ -188,10 +188,10 @@ const Map = () => {
   const handleStartAgent = async () => {
     setShowModal(false);
     const endpoints = [
-      `http://127.0.0.1:5000/api/current_policy?country=${encodeURIComponent(country)}`,
-      `http://127.0.0.1:5000/api/similar_policy?country=${encodeURIComponent(country)}`,
-      `http://127.0.0.1:5000/api/calculate_prediction?country=${encodeURIComponent(country)}`,
-      `http://127.0.0.1:5000/api/generate_recommendation?country=${encodeURIComponent(country)}`,
+      `http://34.226.142.145/api/current_policy?country=${encodeURIComponent(country)}`,
+      `http://34.226.142.145/api/similar_policy?country=${encodeURIComponent(country)}`,
+      `http://34.226.142.145/api/calculate_prediction?country=${encodeURIComponent(country)}`,
+      `http://34.226.142.145/api/generate_recommendation?country=${encodeURIComponent(country)}`,
     ];
 
     const positions = [
