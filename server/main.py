@@ -21,6 +21,7 @@ def home():
 # display current policy summary
 @app.route('/api/current_policy', methods=['GET'])
 def current_policy():
+    print('hit')
     global agent
     country_name = request.args.get('country')
     contexts = agent.knowledge_base_query(country_name)

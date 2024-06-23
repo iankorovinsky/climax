@@ -22,6 +22,7 @@ const Map = () => {
   const map = useRef(null);
   const [showModal, setShowModal] = useState(false);
   const [modalContent, setModalContent] = useState('');
+  const [country, setCountry] = useState('');
 
   useEffect(() => {
     if (map.current) return; // Initialize map only once
@@ -54,7 +55,9 @@ const Map = () => {
           .addTo(map.current);
 
         el.addEventListener('click', () => {
+            //console.log(marker);
             setModalContent(countryDataToContent(marker));
+            setCountry(marker.country);
             setShowModal(true);
         });
       });
@@ -68,7 +71,7 @@ const Map = () => {
   return (
     <div>
       <div ref={mapContainer} style={{ width: '100%', height: '100vh' }} />
-      <Modal show={showModal} onClose={handleCloseModal} content={modalContent} />
+      <Modal show={showModal} onClose={handleCloseModal} content={modalContent} country={country} />
       <div style={{ position: 'absolute', bottom: '20px', width: '100%', textAlign: 'center', color: 'white', fontSize: '1.2em' }}>
         <Typewriter
           words={quotes}
