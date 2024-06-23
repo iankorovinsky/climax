@@ -15,7 +15,19 @@ def home():
 def run_pipeline():
     
     country_name = request.args.get('country')
-    return jsonify(policy=)
+    return jsonify()
+
+# endpoint 1
+# display current policy summary
+
+# endpoint 2
+# display similar policies 
+
+# endpoint 3
+# display prediction of what needs to change
+
+# endpoint 4
+# display new policy based off krish's prediction
 
 if __name__ == '__main__':
     app.run(debug=True)
