@@ -59,7 +59,11 @@ def calculate_prediction():
     global global_similar_countries
     global prediction
     prediction = optimal_emissions.get_emissions_graph(country_name, 20, global_similar_countries)
-    return jsonify({"prediction":prediction})
+    start_year = 2024
+
+    # Creating the dictionary
+    prediction_dict = {start_year + 2 * i: prediction[i] for i in range(len(prediction))}
+    return jsonify({"prediction":prediction_dict})
 
 # endpoint 4
 # display new policy based off krish's prediction
