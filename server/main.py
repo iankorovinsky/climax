@@ -42,7 +42,7 @@ def similar_policy():
     global_similar_countries = similar_countries
     global global_similar_policies
     if similar_countries == []:
-        return jsonify({"current_policy":"No similar policies were found. Check back later!"})
+        return jsonify({"similar_policy":"No similar policies were found. Check back later!"})
     else:
         policies = []
         for item in similar_countries:
