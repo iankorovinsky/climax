@@ -7,13 +7,13 @@ import CustomNode from '../flowchart/CustomNode';
  
 const initialNodes = [
   { id: '1', type:'custom_node', position: { x: 0, y: 400 }, data: { label: 'Find Basic Info On Country' } },
-  { id: '2', type: 'custom_node',  position: { x: 200, y: 200 }, data: { label: 'Predict Optimal Emissions' } },
-  { id: '3', type: 'custom_node', position: {x: 200, y: 400}, data: {label: 'Detect Similar Countries'}},
-  {id: '4', type: 'custom_node', position: {x: 600, y: 400}, data: {label: 'Find Similar Policies'}},
-  {id: '5', type: 'custom_node', position: {x: 900, y: 400}, data: {label: 'Summarize Similar Policies'}},
-  {id: '6', type: 'custom_node', position: {x: 1000, y: 400}, data: {label: 'Generate Updated Policy'}},
-  {id: '7', type: 'custom_node', position: {x: 250, y: 800}, data: {label: 'Discover Current Policies'}},
-  {id: '8', type: 'custom_node', position: {x: 650, y: 800}, data: {label: 'Summarize Current Policies'}},
+  { id: '2', type: 'custom_node',  position: { x: 500, y: 200 }, data: { label: 'Predict Optimal Emissions' } },
+  { id: '3', type: 'custom_node', position: {x: 300, y: 400}, data: {label: 'Detect Similar Countries'}},
+  {id: '4', type: 'custom_node', position: {x: 550, y: 400}, data: {label: 'Find Similar Policies'}},
+  {id: '5', type: 'custom_node', position: {x: 800, y: 400}, data: {label: 'Summarize Similar Policies'}},
+  {id: '6', type: 'custom_node', position: {x: 1100, y: 400}, data: {label: 'Generate Updated Policy'}},
+  {id: '7', type: 'custom_node', position: {x: 250, y: 600}, data: {label: 'Discover Current Policies'}},
+  {id: '8', type: 'custom_node', position: {x: 650, y: 600}, data: {label: 'Summarize Current Policies'}},
 ];
 const initialEdges = [
     { id: 'e1-2', source: '1', target: '2', animated: true},
@@ -45,7 +45,7 @@ const custom_node = {'custom_node': CustomNode};
         edges={edges}
         nodeTypes={custom_node}
         onNodesChange={onNodesChange}
-     
+        defaultViewport={{x: 0, y: -100, zoom: 0.6}}
 
         //defaultViewport={{ x: 600, y: 600, zoom: 0.2 }} // Change zoom level her
         
