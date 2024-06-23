@@ -7,18 +7,26 @@ import CustomNode from '../flowchart/CustomNode';
  
 const initialNodes = [
   { id: '1', type:'custom_node', position: { x: 0, y: 400 }, data: { label: 'Find Basic Info On Country' } },
-  { id: '2', type: 'custom_node',  position: { x: 400, y: 400 }, data: { label: 'Summarize Existing Policy' } },
-  { id: '3', type: 'custom_node', position: {x: 400, y: 600}, data: {label: 'Estimate Goals'}},
-  {id: '4', type: 'custom_node', position: {x: 400, y: 200}, data: {label: 'Search Other Policies'}},
-  {id: '5', type: 'custom_node', position: {x: 800, y: 400}, data: {label: 'Generate Updated Policy'}}
+  { id: '2', type: 'custom_node',  position: { x: 200, y: 200 }, data: { label: 'Predict Optimal Emissions' } },
+  { id: '3', type: 'custom_node', position: {x: 200, y: 400}, data: {label: 'Detect Similar Countries'}},
+  {id: '4', type: 'custom_node', position: {x: 600, y: 400}, data: {label: 'Find Similar Policies'}},
+  {id: '5', type: 'custom_node', position: {x: 900, y: 400}, data: {label: 'Summarize Similar Policies'}},
+  {id: '6', type: 'custom_node', position: {x: 1000, y: 400}, data: {label: 'Generate Updated Policy'}},
+  {id: '7', type: 'custom_node', position: {x: 250, y: 800}, data: {label: 'Discover Current Policies'}},
+  {id: '8', type: 'custom_node', position: {x: 650, y: 800}, data: {label: 'Summarize Current Policies'}},
 ];
 const initialEdges = [
-    { id: 'e1-2', source: '1', target: '2', animated: true },
+    { id: 'e1-2', source: '1', target: '2', animated: true},
     {id: 'e1-3', source: '1', target: '3', animated: true},
-    {id: 'e1-4', source: '1', target: '4', animated: true},
-    {id: 'e2-5', source: '2', target: '5', animated: true},
-    {id: 'e3-5', source: '3', target: '5', animated: true},
+    {id: 'e3-2', source: '3', target: '2', animated: true},
+    {id: 'e3-4', source: '3', target: '4', animated: true},
     {id: 'e4-5', source: '4', target: '5', animated: true},
+    {id: 'e5-6', source: '5', target: '6', animated: true},
+    {id: 'e1-7', source: '1', target: '7', animated: true},
+    {id: 'e7-8', source: '7', target: '8', animated: true},
+    {id: 'e8-6', source: '8', target: '6', animated: true},
+    {id: 'e2-6', source: '2', target: '6', animated: true},
+    
 
 
 ];
@@ -37,6 +45,7 @@ const initialEdges = [
         edges={edges}
         nodeTypes={{'custom_node': CustomNode}}
         onNodesChange={onNodesChange}
+        //defaultViewport={{ x: 600, y: 600, zoom: 0.2 }} // Change zoom level her
         
       />
     </div>
