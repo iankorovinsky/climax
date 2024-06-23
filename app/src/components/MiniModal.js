@@ -2,7 +2,8 @@
 import React from 'react';
 import Draggable from 'react-draggable';
 
-const MiniModal = ({ content, position, onClose }) => {
+const MiniModal = ({ header, content, position, onClose }) => {
+  console.log(header)
   return (
     <Draggable>
       <div className="mini-modal-overlay" style={position}>
@@ -10,8 +11,9 @@ const MiniModal = ({ content, position, onClose }) => {
           <div>
             <button className="close-button" onClick={onClose}>🌎</button>
           </div>
-          <h2>Country Information</h2>
-          <p>{content}</p>
+        
+          <h2>{header}</h2>
+          <div>{content}</div>
         </div>
       </div>
     </Draggable>
