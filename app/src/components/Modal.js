@@ -3,13 +3,14 @@ import Draggable from 'react-draggable';
 
 const Modal = ({ show, onClose, content, country }) => {
   const [currentPolicy, setCurrentPolicy] = useState('');
+  const [optimalEmissions, setOptimalEmissions] = useState(null)
   if (!show) return null;
-  
+
 
   async function callCurrentPolicySummary() {
     console.log(country);
     try {
-      const response = await fetch(`http://127.0.0.1:5000/api/current_policy?country=${encodeURIComponent(country)}`);
+      const response = await fetch(`http://34.226.142.145/api/current_policy?country=${encodeURIComponent(country)}`);
       if (!response.ok) {
         throw new Error('Network response was not ok');
       }
@@ -35,7 +36,10 @@ const Modal = ({ show, onClose, content, country }) => {
     <div className="modal-overlay">
       <div className="modal-content">
         <div>
-          <button className="start-agent" onClick={callCurrentPolicySummary}>Start Agent 🤖</button>
+          <button className="start-agent" onClick={async () => {
+            await callCurrentPolicySummary()
+            await callGenerateOptimalEmissions()
+          }}>Start Agent 🤖</button>
           <button className="close-button" onClick={onClose}>🌎</button>
         </div>
 

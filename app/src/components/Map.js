@@ -34,6 +34,30 @@ const Map = () => {
       zoom: 1,
       projection: 'globe' // Display the map as a globe
     });
+    map.current.on('load', function() {
+      map.current.addLayer(
+        {
+          id: 'country-boundaries',
+          source: {
+            type: 'vector',
+            url: 'mapbox://mapbox.country-boundaries-v1',
+          },
+          'source-layer': 'country_boundaries',
+          type: 'fill',
+          paint: {
+            'fill-color': '#d2361e',
+            'fill-opacity': 0.4,
+          },
+        },
+        'country-label'
+      );
+      map.current.setFilter('country-boundaries', [
+        "in",
+        "iso_3166_1_alpha_3",
+        'NLD',
+        'ITA'
+      ]);
+    });
 
     map.current.on('style.load', () => {
       map.current.setFog({
