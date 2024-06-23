@@ -1,6 +1,7 @@
 import React from 'react';
 import Draggable from 'react-draggable';
 import { Line } from 'react-chartjs-2';
+import 'chart.js/auto';  // auto register category to resolve bugs
 
 const MiniModal = ({ header, content, position, onClose }) => {
   const parseData = (data) => {
@@ -56,7 +57,7 @@ const MiniModal = ({ header, content, position, onClose }) => {
         return <Line data={data} options={options} />;
       }
     } else {
-      return <p style={{ color: "white" }}>{content}</p>;
+      return <p style={{ color: 'white' }}>{content}</p>;
     }
   };
 
@@ -67,7 +68,7 @@ const MiniModal = ({ header, content, position, onClose }) => {
           <div>
             <button className="close-button" onClick={onClose}>🌎</button>
           </div>
-          <h2 style={{ color: "white" }}>{header}</h2>
+          <h2>{header}</h2>
           {renderContent(header, content)}
         </div>
       </div>
