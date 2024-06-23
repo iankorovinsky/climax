@@ -87,7 +87,15 @@ const Map = () => {
 
   ]);
   const [loadingStates, setLoadingStates] = useState([true, true, true, true])
+const resetMinisData = () => {
+  setMiniModals((_) => [
+    {  content: 'Loading...', position: positions[0], header: 'Fetching The Current Policy' },
+    {  content: 'Loading...', position: positions[1], header: 'Fetching A Similar Policy' },
+    {  content: 'Loading...', position: positions[2], header: 'Fetching Emissions Predictions' },
+    {  content: 'Loading...', position: positions[3], header: 'Fetching Improvement Report' },
 
+  ] )
+}
   useEffect(() => {
     if (map.current) return; // Initialize map only once
 
@@ -155,6 +163,7 @@ const Map = () => {
 
   const handleStartAgent = async () => {
     setShowModal(false);
+    resetMinisData()
     setShowMinis(true);
     const endpoints = [
       `http://34.226.142.145/api/current_policy?country=${encodeURIComponent(country)}`,
