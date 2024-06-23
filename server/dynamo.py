@@ -1,9 +1,6 @@
 import boto3
 import math
 from boto3.dynamodb.conditions import Attr
-from tqdm import tqdm
-import pandas as pd
-
 
 class DynamoAccessor:
 
@@ -58,7 +55,7 @@ class DynamoAccessor:
 
 
         count = 0
-        max_results = 2
+        max_results = 1
         results = []
         # Print up to max_results items
         for item in response['Items']:
