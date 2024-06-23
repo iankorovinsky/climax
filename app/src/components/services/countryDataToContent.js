@@ -30,21 +30,23 @@ const initialEdges = [
 
 
 ];
- 
+const custom_node = {'custom_node': CustomNode};
  function Nodes() {
   
   const [nodes, setNodes, onNodesChange] = useNodesState(initialNodes);
   const [edges, setEdges, onEdgesChange] = useEdgesState(initialEdges);
  
-
+  const initialTransform = [0, 0, 1.5]
  
   return (
     <div style={{ width: '100vw', height: '100vh' }}>
       <ReactFlow
         nodes={nodes}
         edges={edges}
-        nodeTypes={{'custom_node': CustomNode}}
+        nodeTypes={custom_node}
         onNodesChange={onNodesChange}
+        fitView={true}
+
         //defaultViewport={{ x: 600, y: 600, zoom: 0.2 }} // Change zoom level her
         
       />
