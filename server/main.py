@@ -28,7 +28,7 @@ def current_policy():
     country_name = request.args.get('country')
     contexts = agent.knowledge_base_query(country_name)
     global global_summary
-    global_summary = agent.llm_summary(country_name, contexts)
+    global_summary = agent.invoke_agent(f"Please generate a summary of the climate policies of {country_name}. Here are their current policies: {contexts}")
     return jsonify({"current_policy":global_summary})
 
 # endpoint 2
