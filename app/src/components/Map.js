@@ -1,4 +1,3 @@
-// src/Map.js
 import React, { useRef, useEffect, useState } from 'react';
 import mapboxgl from 'mapbox-gl';
 import { countryMarkers } from '../constants/Country-Coords';
@@ -7,6 +6,7 @@ import { HFMarkers } from '../constants/HF-Coords';
 import countryDataToContent from '../components/services/countryDataToContent'
 import "mapbox-gl/dist/mapbox-gl.css";
 import Modal from './Modal';
+import MiniModal from './MiniModal';
 import { Typewriter } from 'react-simple-typewriter';
 
 mapboxgl.accessToken = 'pk.eyJ1IjoiaWtvcm92aW5za3kiLCJhIjoiY2x4cWVwemN1MHNqazJpcHdwbTVvdmU3eSJ9.So197HzrXDhSQoUSbDUhUg';
@@ -25,6 +25,7 @@ const Map = () => {
   const [showModal, setShowModal] = useState(false);
   const [modalContent, setModalContent] = useState('');
   const [country, setCountry] = useState('');
+  const [miniModals, setMiniModals] = useState([]);
 
   useEffect(() => {
     if (map.current) return; // Initialize map only once
@@ -35,6 +36,24 @@ const Map = () => {
       center: [0, 0],
       zoom: 1,
       projection: 'globe' // Display the map as a globe
+    });
+    map.current.on('load', function() {
+      map.current.addLayer(
+        {
+          id: 'country-boundaries',
+          source: {
+            type: 'vector',
+            url: 'mapbox://mapbox.country-boundaries-v1',
+          },
+          'source-layer': 'country_boundaries',
+          type: 'fill',
+          paint: {
+            'fill-color': '#00FF00',
+            'fill-opacity': 0.4,
+          },
+        },
+        'country-label'
+      );
     });
 
     map.current.on('style.load', () => {
@@ -57,7 +76,11 @@ const Map = () => {
           .addTo(map.current);
 
         el.addEventListener('click', () => {
-            //console.log(marker);
+            map.current.flyTo({
+              center: marker.coordinates,
+              zoom: 5,
+              essential:true,
+            })
             setModalContent(countryDataToContent(marker));
             setCountry(marker.country);
             setShowModal(true);
@@ -83,10 +106,89 @@ const Map = () => {
     setShowModal(false);
   };
 
+  const handleStartAgent = async () => {
+    setShowModal(false);
+    const endpoints = [
+      `http://34.226.142.145/api/current_policy?country=${encodeURIComponent(country)}`,
+      `http://34.226.142.145/api/similar_policy?country=${encodeURIComponent(country)}`,
+      `http://34.226.142.145/api/calculate_prediction?country=${encodeURIComponent(country)}`,
+      `http://34.226.142.145/api/generate_recommendation?country=${encodeURIComponent(country)}`,
+    ];
+    const headers = [
+      'Current Policy',
+      'Similar Policy',
+      'Calculate Prediction', 
+      'Generate Recommendation'
+    ]
+    const keys = [
+      'current_policy',
+      'similar_policy',
+      'prediction',
+      'results'
+    ]
+    const positions = [
+      { top: '5%', left: '5%' },
+      { top: '5%', left: '55%' },
+      { top: '50%', left: '5%' },
+      { top: '50%', left: '55%' }
+    ];
+
+    for (let i = 0; i < endpoints.length; i++) {
+      try {
+        const response = await fetch(endpoints[i]);
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+
+        const contentType = response.headers.get('content-type');
+        if (!contentType || !contentType.includes('application/json')) {
+          throw new TypeError('Response is not JSON');
+        }
+
+        const data = await response.json();
+        //console.log(data['current_policy'])
+        let dataString = JSON.stringify(data);
+        console.log(dataString)
+        if (i != 2) {
+          dataString = data[keys[i]]
+        }
+        setMiniModals((prevModals) => [
+          ...prevModals,
+          {  content: dataString, position: positions[i], header: headers[i] }
+        ]);
+      } catch (error) {
+        console.error('There was a problem with the fetch operation:', error);
+        setMiniModals((prevModals) => [
+          ...prevModals,
+          {  content: 'Error fetching data', position: positions[i] }
+        ]);
+      }
+    }
+  };
+
+  const handleMiniModalClose = (index) => {
+    setMiniModals((prevModals) => prevModals.filter((_, i) => i !== index));
+  };
+
   return (
     <div>
       <div ref={mapContainer} style={{ width: '100%', height: '100vh' }} />
-      <Modal show={showModal} onClose={handleCloseModal} content={modalContent} country={country} />
+      <Modal
+        show={showModal}
+        onClose={handleCloseModal}
+        onStartAgent={handleStartAgent}
+        content={modalContent}
+        country={country}
+      />
+      {miniModals.map((modal, index) => (
+        <MiniModal
+          header={modal.header}
+          key={index}
+          content={modal.content}
+          position={modal.position}
+          onClose={() => handleMiniModalClose(index)}
+        />
+      ))}
       <div style={{ position: 'absolute', bottom: '20px', width: '100%', textAlign: 'center', color: 'white', fontSize: '1.2em' }}>
         <Typewriter
           words={quotes}
