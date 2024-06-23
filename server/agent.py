@@ -192,3 +192,9 @@ class Agent:
             raise
 
         return completion
+    
+agent = Agent()
+country_name = "Republic of Korea"
+contexts = agent.knowledge_base_query(country_name)
+print(agent.llm_summary(country_name, contexts))
+print(agent.invoke_agent(f"Please generate a summary of the climate policies of {country_name}. Here are their current policies: {contexts}"))
