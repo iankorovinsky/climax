@@ -151,7 +151,7 @@ const resetMinisData = () => {
 
         el.addEventListener('click', () => {
             //console.log(marker);
-            window.open("https://huggingface.co/meta-llama/Meta-Llama-3-8B", '_blank');
+            window.open("https://studio-d-7oap1vizquik.studio.us-east-1.sagemaker.aws/inference-experience/endpoints/details/ucb-hackathon-easter-egg", '_blank');
         });
       });
     });
