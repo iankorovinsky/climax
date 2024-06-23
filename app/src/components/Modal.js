@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Draggable from 'react-draggable';
 
 const Modal = ({ show, onClose, content, country }) => {
   const [currentPolicy, setCurrentPolicy] = useState('');
@@ -30,6 +31,7 @@ const Modal = ({ show, onClose, content, country }) => {
   }
 
   return (
+    <Draggable>
     <div className="modal-overlay">
       <div className="modal-content">
         <div>
@@ -41,6 +43,7 @@ const Modal = ({ show, onClose, content, country }) => {
         <p>{currentPolicy || content}</p>
       </div>
     </div>
+    </Draggable>
   );
 };
 
