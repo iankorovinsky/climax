@@ -173,6 +173,11 @@ const Map = () => {
           .addTo(map.current);
 
         el.addEventListener('click', () => {
+            map.current.flyTo({
+              center: marker.coordinates,
+              zoom: 5,
+              essential:true,
+            })
             setModalContent(countryDataToContent(marker));
             setCountry(marker.country);
             setShowModal(true);
