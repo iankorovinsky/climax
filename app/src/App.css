@@ -222,3 +222,28 @@ p {
   cursor: pointer;
   color: white;  /* White close button */
 }
+
+.welcome-banner {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #ffcc00;
+  color: black;
+  text-align: center;
+  padding: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.welcome-banner p {
+  margin: 0;
+  display: inline;
+}
+
+.welcome-banner button {
+  margin-left: 20px;
+  background: none;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+}
