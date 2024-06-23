@@ -67,7 +67,3 @@ class DynamoAccessor:
             if count >= max_results:
                 break
         return results
-    
-
-db = DynamoAccessor()
-db.query("Ukraine")
