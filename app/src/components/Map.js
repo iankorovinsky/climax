@@ -38,22 +38,7 @@ const Map = () => {
       projection: 'globe' // Display the map as a globe
     });
     map.current.on('load', function() {
-      map.current.addLayer(
-        {
-          id: 'country-boundaries',
-          source: {
-            type: 'vector',
-            url: 'mapbox://mapbox.country-boundaries-v1',
-          },
-          'source-layer': 'country_boundaries',
-          type: 'fill',
-          paint: {
-            'fill-color': '#00FF00',
-            'fill-opacity': 0.4,
-          },
-        },
-        'country-label'
-      );
+
     });
 
     map.current.on('style.load', () => {
