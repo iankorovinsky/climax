@@ -1,7 +1,9 @@
 import React, { useRef, useEffect, useState } from 'react';
 import mapboxgl from 'mapbox-gl';
 import { countryMarkers } from '../constants/Country-Coords';
-import countryDataToContent from '../components/services/countryDataToContent';
+import { HFMarkers } from '../constants/HF-Coords';
+
+import countryDataToContent from '../components/services/countryDataToContent'
 import "mapbox-gl/dist/mapbox-gl.css";
 import Modal from './Modal';
 import MiniModal from './MiniModal';
@@ -82,6 +84,19 @@ const Map = () => {
             setModalContent(countryDataToContent(marker));
             setCountry(marker.country);
             setShowModal(true);
+        });
+      });
+      HFMarkers.forEach(marker => {
+        const el = document.createElement('div');
+        el.className = 'hf_marker';
+
+        new mapboxgl.Marker(el)
+          .setLngLat(marker.coordinates)
+          .addTo(map.current);
+
+        el.addEventListener('click', () => {
+            //console.log(marker);
+            window.open("https://huggingface.co/meta-llama/Meta-Llama-3-8B", '_blank');
         });
       });
     });

@@ -42,6 +42,15 @@
   background-image: url('./images/marker-icon.png');
   background-size: cover;
   width: 30px;
+  color: blue;
+  height: 30px;
+  border-radius: 50%;
+}
+
+.hf_marker {
+  background-image: url('./images/hugging_face.png');
+  background-size: cover;
+  width: 30px;
   height: 30px;
   border-radius: 50%;
 }
