@@ -199,6 +199,12 @@ const Map = () => {
       'Calculate Prediction', 
       'Generate Recommendation'
     ]
+    const keys = [
+      'current_policy',
+      'current_policy',
+      'prediction',
+      'results'
+    ]
     const positions = [
       { top: '5%', left: '5%' },
       { top: '5%', left: '55%' },
@@ -219,7 +225,12 @@ const Map = () => {
         }
 
         const data = await response.json();
-        const dataString = JSON.stringify(data);
+        //console.log(data['current_policy'])
+        let dataString = JSON.stringify(data);
+        console.log(dataString)
+        if (i != 2) {
+          dataString = data[keys[i]]
+        }
         setMiniModals((prevModals) => [
           ...prevModals,
           {  content: dataString, position: positions[i], header: headers[i] }

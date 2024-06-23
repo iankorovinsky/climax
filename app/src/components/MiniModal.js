@@ -3,7 +3,6 @@ import React from 'react';
 import Draggable from 'react-draggable';
 
 const MiniModal = ({ header,content, position, onClose }) => {
-  const formattedContent = JSON.stringify(JSON.parse(content), null, 2);
 
   return (
     <Draggable>
@@ -14,7 +13,7 @@ const MiniModal = ({ header,content, position, onClose }) => {
           </div>
         
           <h2>{header}</h2>
-          <pre><code>{formattedContent}</code></pre>
+          <p>{content}</p>
         </div>
       </div>
     </Draggable>
