@@ -2,7 +2,7 @@ import pandas as pd
 from sklearn.preprocessing import StandardScaler
 
 # Load the cleaned data
-data = pd.read_csv('cleaned_data.csv')
+data = pd.read_csv('../data/cleaned_data.csv')
 
 # Select relevant features
 features = ['Population', 'Mean income or consumption per day', 'poverty_gap_index_4000', 'Annual CO₂ emissions (per capita)', 'GDP per capita']
