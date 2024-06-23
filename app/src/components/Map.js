@@ -5,8 +5,17 @@ import { countryMarkers } from '../constants/Country-Coords';
 import countryDataToContent from '../components/services/countryDataToContent'
 import "mapbox-gl/dist/mapbox-gl.css";
 import Modal from './Modal';
+import { Typewriter } from 'react-simple-typewriter';
 
 mapboxgl.accessToken = 'pk.eyJ1IjoiaWtvcm92aW5za3kiLCJhIjoiY2x4cWVwemN1MHNqazJpcHdwbTVvdmU3eSJ9.So197HzrXDhSQoUSbDUhUg';
+
+const quotes = [
+  "The best way to predict the future is to create it.",
+  "Do not wait to strike till the iron is hot; but make it hot by striking.",
+  "Whether you think you can, or you think you can’t – you’re right.",
+  "The only limit to our realization of tomorrow is our doubts of today.",
+  "The purpose of life is not to be happy. It is to be useful, to be honorable, to be compassionate, to have it make some difference that you have lived and lived well."
+];
 
 const Map = () => {
   const mapContainer = useRef(null);
@@ -60,6 +69,17 @@ const Map = () => {
     <div>
       <div ref={mapContainer} style={{ width: '100%', height: '100vh' }} />
       <Modal show={showModal} onClose={handleCloseModal} content={modalContent} />
+      <div style={{ position: 'absolute', bottom: '20px', width: '100%', textAlign: 'center', color: 'white', fontSize: '1.2em' }}>
+        <Typewriter
+          words={quotes}
+          loop={false}
+          cursor
+          cursorStyle='🧸'
+          typeSpeed={40}
+          deleteSpeed={40}
+          delaySpeed={1000}
+        />
+      </div>
     </div>
   );
 };

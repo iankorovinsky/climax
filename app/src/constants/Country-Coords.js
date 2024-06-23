@@ -157,7 +157,7 @@ export const countryMarkers = [
     { country: "Solomon Islands", coordinates: [160.156194, -9.64571] },
     { country: "Somalia", coordinates: [46.199616, 5.152149] },
     { country: "South Africa", coordinates: [22.937506, -30.559482] },
-    { country: "South Korea", coordinates: [127.766922, 35.907757] },
+    { country: "Republic of Korea", coordinates: [127.766922, 35.907757] },
     { country: "South Sudan", coordinates: [30.217636, 7.862684] },
     { country: "Spain", coordinates: [-3.74922, 40.463667] },
     { country: "Sri Lanka", coordinates: [80.771797, 7.873054] },
