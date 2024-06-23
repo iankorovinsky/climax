@@ -23,7 +23,13 @@ def find_optimal_split(fs, gs, country_code, period):
 
 
 def get_emissions_graph(country, period, similar_country):
-    # input is a string of the country name, an integer of the period, and a string of the similar country name
+    # input is a string of the country name, an integer of the period, and an array of strings for similar country names
+
+    if len(similar_country) == 0:
+        similar_country = 'Canada'
+    else:
+        similar_country = similar_country[0]
+        
     fs = {}
     gs = {}
     with open('fs.json', 'r') as f:
