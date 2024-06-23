@@ -19,7 +19,7 @@ def remove_continent_rows(input_file):
         outfile.writelines(cleaned_lines)
 
 # Directory containing the CSV files
-directory = 'data'
+directory = '../data'
 
 # Process each CSV file in the directory
 for filename in os.listdir(directory):
