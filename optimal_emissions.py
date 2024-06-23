@@ -29,7 +29,7 @@ def get_emissions_graph(country, period, similar_country):
         similar_country = 'Canada'
     else:
         similar_country = similar_country[0]
-        
+
     fs = {}
     gs = {}
     with open('fs.json', 'r') as f:
@@ -56,6 +56,6 @@ def get_emissions_graph(country, period, similar_country):
     future_emissions = []
     for delta in range(2, period, 2):
         split = find_optimal_split(fs, gs, similar_country_code, delta)
-        future_emissions.append(current_emission * np.poly1d(gs[similar_country_code][str(delta - split)][0])(current_economy * np.poly1d(fs[similar_country_code][str(split)][0])(emission_to_test)) * emission_decay(delta))
+        future_emissions.append(current_emission * np.poly1d(gs[similar_country_code][str(delta - split)][0])(current_economy * np.poly1d(fs[similar_country_code][str(split)][0])(optimal_emission)) * emission_decay(delta))
     
     return future_emissions
