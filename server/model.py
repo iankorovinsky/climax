@@ -21,7 +21,7 @@ knn = NearestNeighbors(n_neighbors=2, algorithm='auto')
 knn.fit(data[features])
 
 # Function to find the most similar countries to find similar policies excluding the query country
-def find_similar_countries_for_similar_policies(query_country, query_year):
+def find_similar_countries_for_similar_policies(query_country, query_year=2019):
     query_data = data[(data['Country'] == query_country) & (data['Year'] == query_year)]
     if query_data.empty:
         return []
