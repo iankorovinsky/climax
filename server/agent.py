@@ -4,6 +4,10 @@ from botocore.client import Config
 import json
 import re
 from decimal import Decimal
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 class Agent:
     def __init__(self):
@@ -12,8 +16,9 @@ class Agent:
         self.region = self.session.region_name
         self.bedrock_config = Config(connect_timeout=120, read_timeout=120, retries={'max_attempts': 0})
         self.bedrock_client = boto3.client('bedrock-runtime', region_name = self.region)
-        self.bedrock_agent_client = boto3.client("bedrock-agent-runtime",
-                                    config=self.bedrock_config, region_name = self.region)
+        self.bedrock_agent_client = boto3.client("bedrock-agent-runtime", config=self.bedrock_config, region_name = self.region)
+        self.agents_runtime_client = boto3.client(service_name='bedrock-agent-runtime', region_name='us-east-1', aws_access_key_id=os.getenv('AWS_ACCESS_KEY_ID'), aws_secret_access_key=os.getenv('AWS_SECRET_ACCESS_KEY'))
+        
     # FOR RAG
     def retrieve_rag_results(self,query):
         return self.bedrock_agent_client.retrieve(
@@ -151,3 +156,39 @@ class Agent:
         else:
             response_text = response_text
         return response_text
+
+
+    def invoke_agent(self, prompt):
+        """
+        Sends a prompt for the agent to process and respond to.
+
+        :param agent_id: The unique identifier of the agent to use.
+        :param agent_alias_id: The alias of the agent to use.
+        :param session_id: The unique identifier of the session. Use the same value across requests
+                            to continue the same conversation.
+        :param prompt: The prompt that you want Claude to complete.
+        :return: Inference response from the model.
+        """
+
+        try:
+            # Note: The execution time depends on the foundation model, complexity of the agent,
+            # and the length of the prompt. In some cases, it can take up to a minute or more to
+            # generate a response.
+            response = self.agents_runtime_client.invoke_agent(
+                agentId='ZTG1BEKVMM',
+                agentAliasId='MOEHCINIH6',
+                sessionId='bk2',
+                inputText=prompt,
+            )
+
+            completion = ""
+
+            for event in response.get("completion"):
+                chunk = event["chunk"]
+                completion = completion + chunk["bytes"].decode()
+
+        except :
+            print("Couldn't invoke agent.")
+            raise
+
+        return completion
