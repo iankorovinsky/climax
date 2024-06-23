@@ -201,7 +201,7 @@ const Map = () => {
     ]
     const keys = [
       'current_policy',
-      'current_policy',
+      'similar_policy',
       'prediction',
       'results'
     ]
