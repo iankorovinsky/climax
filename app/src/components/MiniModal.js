@@ -2,8 +2,9 @@
 import React from 'react';
 import Draggable from 'react-draggable';
 
-const MiniModal = ({ header, content, position, onClose }) => {
-  console.log(header)
+const MiniModal = ({ content, position, onClose }) => {
+  const formattedContent = JSON.stringify(JSON.parse(content), null, 2);
+
   return (
     <Draggable>
       <div className="mini-modal-overlay" style={position}>
@@ -13,7 +14,7 @@ const MiniModal = ({ header, content, position, onClose }) => {
           </div>
         
           <h2>{header}</h2>
-          <div>{content}</div>
+          <pre><code>{formattedContent}</code></pre>
         </div>
       </div>
     </Draggable>
