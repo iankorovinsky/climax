@@ -2,7 +2,7 @@
 import React from 'react';
 import Draggable from 'react-draggable';
 
-const MiniModal = ({ content, position, onClose }) => {
+const MiniModal = ({ header,content, position, onClose }) => {
   const formattedContent = JSON.stringify(JSON.parse(content), null, 2);
 
   return (
