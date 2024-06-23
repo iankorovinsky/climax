@@ -8,6 +8,24 @@ import "mapbox-gl/dist/mapbox-gl.css";
 import Modal from './Modal';
 import MiniModal from './MiniModal';
 import { Typewriter } from 'react-simple-typewriter';
+const headers = [
+  'Current Policy',
+  'Similar Policy',
+  'Calculate Prediction', 
+  'Generate Recommendation'
+]
+const keys = [
+  'current_policy',
+  'similar_policy',
+  'prediction',
+  'results'
+]
+const positions = [
+  { top: '5%', left: '5%' },
+  { top: '5%', left: '55%' },
+  { top: '50%', left: '5%' },
+  { top: '50%', left: '55%' }
+];
 
 mapboxgl.accessToken = 'pk.eyJ1IjoiaWtvcm92aW5za3kiLCJhIjoiY2x4cWVwemN1MHNqazJpcHdwbTVvdmU3eSJ9.So197HzrXDhSQoUSbDUhUg';
 
@@ -57,10 +75,18 @@ const quotes = [
 const Map = () => {
   const mapContainer = useRef(null);
   const map = useRef(null);
+  const [showMinis, setShowMinis] = useState(false);
   const [showModal, setShowModal] = useState(false);
   const [modalContent, setModalContent] = useState('');
   const [country, setCountry] = useState('');
-  const [miniModals, setMiniModals] = useState([]);
+  const [miniModals, setMiniModals] = useState([
+    {  content: 'Loading...', position: positions[0], header: 'Fetching The Current Policy' },
+    {  content: 'Loading...', position: positions[1], header: 'Fetching A Similar Policy' },
+    {  content: 'Loading...', position: positions[2], header: 'Fetching Emissions Predictions' },
+    {  content: 'Loading...', position: positions[3], header: 'Fetching Improvement Report' },
+
+  ]);
+  const [loadingStates, setLoadingStates] = useState([true, true, true, true])
 
   useEffect(() => {
     if (map.current) return; // Initialize map only once
@@ -104,6 +130,7 @@ const Map = () => {
             setModalContent(countryDataToContent(marker));
             setCountry(marker.country);
             setShowModal(true);
+            setShowMinis(false);
         });
       });
       HFMarkers.forEach(marker => {
@@ -128,34 +155,23 @@ const Map = () => {
 
   const handleStartAgent = async () => {
     setShowModal(false);
+    setShowMinis(true);
     const endpoints = [
       `http://34.226.142.145/api/current_policy?country=${encodeURIComponent(country)}`,
       `http://34.226.142.145/api/similar_policy?country=${encodeURIComponent(country)}`,
       `http://34.226.142.145/api/calculate_prediction?country=${encodeURIComponent(country)}`,
       `http://34.226.142.145/api/generate_recommendation?country=${encodeURIComponent(country)}`,
     ];
-    const headers = [
-      'Current Policy',
-      'Similar Policy',
-      'Calculate Prediction', 
-      'Generate Recommendation'
-    ]
-    const keys = [
-      'current_policy',
-      'similar_policy',
-      'prediction',
-      'results'
-    ]
-    const positions = [
-      { top: '5%', left: '5%' },
-      { top: '5%', left: '55%' },
-      { top: '50%', left: '5%' },
-      { top: '50%', left: '55%' }
-    ];
 
     for (let i = 0; i < endpoints.length; i++) {
       try {
         const response = await fetch(endpoints[i]);
+        setLoadingStates((old) => {
+          let ls = [...old]
+          ls[i] = false
+          return ls
+        })
+
         if (!response.ok) {
           throw new Error('Network response was not ok');
         }
@@ -172,16 +188,19 @@ const Map = () => {
         if (i != 2) {
           dataString = data[keys[i]]
         }
-        setMiniModals((prevModals) => [
-          ...prevModals,
-          {  content: dataString, position: positions[i], header: headers[i] }
-        ]);
+        
+        setMiniModals((prevModals) => {
+          let ps = [...prevModals]
+          ps[i] =  {  content: dataString, position: positions[i], header: headers[i] }
+          return ps
+        });
       } catch (error) {
         console.error('There was a problem with the fetch operation:', error);
-        setMiniModals((prevModals) => [
-          ...prevModals,
-          {  content: 'Error fetching data', position: positions[i] }
-        ]);
+        setMiniModals((prevModals) => {
+          let ps = [...prevModals]
+          ps[i] =     {  content: 'Could not fetch data :(', position: positions[i], header: 'Error!!' }
+          return ps
+        });
       }
     }
   };
@@ -200,7 +219,7 @@ const Map = () => {
         content={modalContent}
         country={country}
       />
-      {miniModals.map((modal, index) => (
+      {showMinis ? miniModals.map((modal, index) => (
         <MiniModal
           header={modal.header}
           key={index}
@@ -208,7 +227,7 @@ const Map = () => {
           position={modal.position}
           onClose={() => handleMiniModalClose(index)}
         />
-      ))}
+      )): null}
       <div style={{ position: 'absolute', bottom: '20px', width: '100%', textAlign: 'center', color: 'white', fontSize: '1.2em' }}>
         <Typewriter
           words={quotes}
