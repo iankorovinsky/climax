@@ -4,7 +4,6 @@ import math
 import numpy as np
 import sys
 
-
 emission_decay = lambda year: math.e ** (-0.02 * year)
 
 
